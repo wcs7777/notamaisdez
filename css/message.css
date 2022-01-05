@@ -1,0 +1,32 @@
+.message {
+	--message: hsl(230, 49%, 93%);
+	--message-color: hsl(0, 0%, 20%);
+	--message-font-size: 1.3rem;
+	display: inline-block;
+	background-color: var(--message);
+	margin: 0 auto;
+	padding: .75em 1.5em;
+	border-radius: .3em;
+	box-shadow: -0.1em .1em .4em rgba(0, 0, 0, .5);
+	color: var(--message-color);
+	font-size: var(--message-font-size);
+	text-align: center;
+	line-height: 1.75;
+}
+
+@media (max-width: 30em) {
+	.message {
+		width: 100%;
+		padding: 1em;
+	}
+}
+
+.message__text {
+	display: block;
+	margin: 0;
+}
+
+.message__highlight {
+	font-size: 1.05em;
+	font-weight: bold;
+}

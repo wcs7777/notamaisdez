@@ -1,0 +1,38 @@
+.form {
+	--form: hsl(204, 37%, 89%);
+	--form-title: hsl(0, 0%, 20%);
+	--form-font-size: 1.3rem;
+	background-color: var(--form);
+	width: 26.5em;
+	margin: 0 auto;
+	padding: 1em 2.7em;
+	border-radius: .3em;
+	box-shadow: -0.1em .1em .4em rgba(0, 0, 0, .5);
+	font-size: var(--form-font-size);
+}
+
+@media (max-width: 30em) {
+	.form {
+		width: 100%;
+		padding: 1em;
+	}
+}
+
+.form__title {
+	margin: 0 0 .5em;
+	color: var(--form-title);
+	text-align: center;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.form__back {
+	display: block;
+	margin: 0;
+	margin-left: -0.45em;
+	text-align: left;
+}
+
+.form__back ~ .form__title {
+	margin-top: -0.9em;
+}

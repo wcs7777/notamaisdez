@@ -1,0 +1,61 @@
+.modal {
+	display: none;
+}
+
+.modal.is-open {
+	display: flex;
+	justify-content: center;
+}
+
+.modal__backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .6);
+	cursor: pointer;
+	z-index: 20;
+}
+
+.modal__body {
+	position: fixed;
+	top: 6.5em;
+	margin: 0 auto;
+	box-shadow: -0.4em .8em 2em rgba(0, 0, 0, .8);
+	overflow: auto;
+	z-index: 30;
+}
+
+.modal__close {
+	--modal-close: hsl(192, 42%, 34%);
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 1em;
+	width: 1em;
+	padding: .3em;
+	color: var(--modal-close);
+	background-color: transparent;
+	border: 0;
+	opacity: .5;
+	font-size: 1.5em;
+	text-indent: 10em;
+	overflow: hidden;
+	cursor: pointer;
+	transition: opacity 250ms ease;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+	opacity: 1;
+}
+
+.modal__close::after {
+	content: "\00D7";
+	position: absolute;
+	top: .2em;
+	left: .25em;
+	text-indent: 0;
+	line-height: .5;
+}

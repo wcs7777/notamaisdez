@@ -1,0 +1,30 @@
+.background {
+	--background: hsl(204, 37%, 89%);
+	--background-radial: hsl(204, 34%, 75%);
+	--background-color-blend: rgba(255, 255, 255, .3);
+	background-color: var(--background);
+	background-image: radial-gradient(
+		var(--background-radial), var(--background)
+	);
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+@media (min-width: 1378px) {
+	.background {
+		background-size: cover;
+	}
+}
+
+.background--with-img {
+	background-image: url(images/background.jpg);
+	background-color: var(--background-color-blend);
+	background-blend-mode: hard-light;
+}
+
+@supports (-moz-appearance:none) {
+	.background--with-img {
+		--background-color-blend: rgba(0, 0, 0, .4);
+	}
+}

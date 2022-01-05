@@ -1,0 +1,70 @@
+.breadcrumb {
+	--breadcrumb-font-color: hsl(0, 0%, 20%);
+	--breadcrumb-font-color-focus: hsl(359, 95%, 60%);
+	--breadcrumb-separator-color: hsl(192, 42%, 34%);
+	display: inline-flex;
+	flex: 1;
+	min-width: 0;
+	font-size: 1.07rem;
+}
+
+.crumb {
+	position: relative;
+	padding: 1em 0 0;
+	list-style: none;
+}
+
+.crumb:not(:first-child) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	animation: 1s delay-overflow-hidden;
+}
+
+@keyframes delay-overflow-hidden {
+	from { overflow: visible; }
+	to { overflow: hidden; }
+}
+
+.crumb:not(:first-child):focus,
+.crumb:not(:first-child):hover {
+	overflow: visible;
+	animation: 1s delay-overflow-visible;
+}
+
+@keyframes delay-overflow-visible {
+	from { overflow: hidden; }
+	to { overflow: visible; }
+}
+
+.crumb + .crumb {
+	padding-left: 1em;
+}
+
+.crumb + .crumb::before {
+	content: "";
+	position: absolute;
+	top: 1.25em;
+	left: .2em;
+	border: .5em solid transparent;
+	border-left-color: var(--breadcrumb-separator-color);
+}
+
+.crumb, .crumb > * {
+	color: var(--breadcrumb-font-color);
+	text-decoration: none;
+	transition: color 200ms ease;
+	cursor: pointer;
+}
+
+.crumb:hover, .crumb > *:hover,
+.crumb:focus, .crumb > *:focus {
+	color: var(--breadcrumb-font-color-focus);
+}
+
+@media (max-width: 42.2em) {
+	.crumb:not(:first-child):focus,
+	.crumb:not(:first-child):hover {
+		white-space: normal;
+	}
+}

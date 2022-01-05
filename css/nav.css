@@ -1,0 +1,19 @@
+.nav {
+	--nav: hsl(329, 81%, 65%);
+	--nav-gradient: hsl(144, 93%, 35%);
+	--nav-gradient: hsl(329, 71%, 45%);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 1.5em;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-image: linear-gradient(
+		to right, var(--nav-gradient), var(--nav)
+	);
+	border-image-slice: 1;
+}
+
+.nav > * + * {
+	margin-left: 1em;
+}

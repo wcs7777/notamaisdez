@@ -1,0 +1,68 @@
+.menu {
+	--menu-font-color: hsl(0, 0%, 10%);
+	--menu-font-color-focus: hsl(359, 95%, 60%);
+	display: inline-block;
+}
+
+.menu__options {
+	padding: .5em 1rem;
+	list-style: none;
+}
+
+.menu__option {
+	display: block;
+	padding: .3em 0;
+	color: var(--menu-font-color);
+	font-size: 1em;
+	text-align: left;
+	text-decoration: none;
+	letter-spacing: .06em;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: color 200ms ease-in;
+}
+
+.menu__option:hover,
+.menu__option:focus,
+.menu__option:hover .menu__option__icon,
+.menu__option:focus .menu__option__icon {
+	--icon: var(--menu-font-color-focus);
+	color: var(--menu-font-color-focus);
+}
+
+.menu__option__icon {
+	margin-left: -0.2em;
+	vertical-align: -0.3em;
+	transition: all 200ms ease-out;
+	transition-property: stroke, fill, transform;
+}
+
+.menu__option__label {
+	margin-left: .5em;
+}
+
+.menu--row {
+	text-align: right;
+	overflow-x: hidden;
+	transition: width 200ms ease-out;
+}
+
+.menu--row .menu__options {
+	display: inline-flex;
+	justify-content: space-between;
+	padding: .5em 0 0;
+}
+
+.menu--row .menu__options > li {
+	margin-left: 1em;
+}
+
+.menu--row .menu__options-default,
+.menu--row.is-selected > .menu__options-selected {
+	display: inline-flex;
+}
+
+.menu--row.is-selected > .menu__options-default,
+.menu--row .menu__options-selected {
+	display: none;
+}

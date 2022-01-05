@@ -1,0 +1,50 @@
+.card, .card-create {
+	--card: hsl(204, 37%, 89%);
+	--card-focus: hsl(204, 34%, 86%);
+	--card-selected: hsl(182, 59%, 63%);
+	--card-font-size: 1rem;
+	background-color: var(--card);
+	padding: .6em 1em 1em;
+	box-shadow: -0.2em .4em .6em rgba(0, 0, 0, 0.3);
+	text-align: center;
+	font-size: var(--card-font-size);
+	cursor: pointer;
+}
+
+.card {
+	transition: all 200ms ease-out;
+	transition-property: background-color, box, shadow;
+}
+
+.card:hover,
+.card:focus {
+	background-color: var(--card-focus);
+}
+
+.card__options {
+	float: right;
+}
+
+.card.is-selected {
+	background-color: var(--card-selected);
+	box-shadow: -0.1em .2em .3em rgba(0, 0, 0, 0.3);
+}
+
+.card__title {
+	margin: .8em 0 0;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.card__detail {
+	margin: .4em 1.38em 0 0;
+	font-size: 1em;
+}
+
+.card-create {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	cursor: default;
+}

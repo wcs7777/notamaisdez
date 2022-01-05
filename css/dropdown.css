@@ -1,0 +1,40 @@
+.dropdown {
+	--dropdown: hsl(189, 75%, 91%);
+	--dropdown-top: 1.5em;
+	display: inline-block;
+	position: relative;
+}
+
+.dropdown__drawer {
+	position: absolute;
+	top: var(--dropdown-top);
+	right: 0;
+	height: 0;
+	background-color: var(--dropdown);
+	border-radius: .2em;
+	box-shadow: -0.1em .1em .4em rgba(0, 0, 0, .5);
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	transition:
+		height 200ms ease-out,
+		opacity 200ms ease-out,
+		visibility 0s ease-out 200ms;
+	z-index: 10;
+}
+
+.dropdown.is-open .dropdown__drawer {
+	opacity: 1;
+	visibility: visible;
+	transition-delay: 0s;
+}
+
+.dropdown--right .dropdown__drawer {
+	left: 0;
+	right: initial;
+}
+
+.dropdown--transparent .dropdown__drawer {
+	background-color: transparent;
+	box-shadow: none;
+}

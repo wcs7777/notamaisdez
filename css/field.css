@@ -1,0 +1,119 @@
+.field {
+	--field: hsl(0, 0%, 40%);
+	--field-color: hsl(0, 0%, 15%);
+	--field-focus: hsl(168, 58%, 25%);
+	--field-focus-gradient: hsl(164, 75%, 43%);
+	--field-error: hsl(0, 70%, 45%);
+	--field-font-size: 1.1rem;
+	position: relative;
+	width: 100%;
+	margin: 0 0 1em;
+	padding-top: 1em;
+	color: var(--field);
+	font-size: var(--field-font-size);
+}
+
+.field__input {
+	width: 100%;
+	padding: .3em 0;
+	border: 0;
+	border-bottom: 2px solid var(--field);
+	outline: 0;
+	color: var(--field-color);
+	background-color: transparent;
+	font-size: 1em;
+	transition: border-color 200ms linear;
+}
+
+.field__input:focus,
+.field__input:hover {
+	border-image: linear-gradient(
+		to right, var(--field-focus-gradient), var(--field-focus)
+	);
+	border-image-slice: 1;
+}
+
+.field__input::placeholder {
+	color: transparent;
+}
+
+.field__input:placeholder-shown ~ .field__label {
+	top: 1.2em;
+	font-size: 1em;
+	cursor: text;
+}
+
+.field__label,
+.field__input:focus ~ .field__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	font-size: .8em;
+	transition: all 250ms ease;
+	transition-property: top, font-size, color;
+}
+
+.field__input:focus ~ .field__label {
+	color: var(--field-focus);
+	font-weight: bold;
+}
+
+.field__error {
+	display: inline-block;
+	margin-top: .36em;
+	color: var(--field-error);
+	font-size: .9em;
+	visibility: hidden;
+}
+
+.field__input:invalid {
+	border-color: var(--field-error);
+}
+
+.field__input:invalid ~ .field__error {
+	visibility: visible;
+}
+
+.field__help {
+	position: absolute;
+	right: 0;
+	margin-top: .36em;
+	color: var(--field-focus);
+	text-decoration: underline;
+	opacity: .7;
+	cursor: pointer;
+	transition: opacity 200ms ease;
+}
+
+.field__help:focus,
+.field__help:hover {
+	text-decoration: none;
+	opacity: 1;
+}
+
+.field--without-label > .field__input::placeholder {
+	color: var(--field-focus);
+}
+
+.field--with-icon > .field__input {
+	padding-left: 1.4em;
+}
+
+.field--with-icon > .field__icon {
+	position: absolute;
+	top: 1em;
+	width: 1.1em;
+	height: 1.1em;
+}
+
+.field--light {
+	--field: hsl(0, 0%, 70%);
+	--field-color: hsl(0, 0%, 100%);
+	--field-focus: hsl(124, 35%, 60%);
+	--field-focus-gradient: hsl(124, 45%, 89%);
+	--field-error: hsl(0, 70%, 68%);
+}
+
+.field--limited {
+	width: 80ch;
+}

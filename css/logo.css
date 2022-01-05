@@ -1,0 +1,27 @@
+.logo {
+	--logo-font-color: hsl(0, 0%, 5%);
+	--logo-img-color: hsl(0, 85%, 40%);
+	--logo-font-size: 1.3em;
+	--logo-img-size: calc(var(--logo-font-size) * 2.5);
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.logo__text {
+	color: var(--logo-font-color);
+	font-size: var(--logo-font-size);
+	font-family: Helvetica, Arial, sans-serif;
+	font-style: italic;
+}
+
+.logo__img {
+	height: var(--logo-img-size);
+	width: var(--logo-img-size);
+	fill: var(--logo-img-color);
+	stroke: var(--logo-img-color);
+}
+
+.logo--light {
+	--logo-font-color: hsl(0, 0%, 90%);
+}

@@ -1,0 +1,87 @@
+.button {
+	--button: hsl(0, 15%, 10%);
+	--button-gradient: hsl(0, 30%, 25%);
+	--button-color: white;
+	--button-shadow: rgba(0, 0, 0, .6);
+	display: inline-block;
+	width: 100%;
+	margin: .3em auto;
+	padding: 1em 2em;
+	color: var(--button-color);
+	background-image: linear-gradient(
+		to right,
+		var(--button) 35%,
+		var(--button-gradient) 100%
+	);
+	border: none;
+	border-radius: .5em;
+	box-shadow: 0 .1em .3em var(--button-shadow);
+	opacity: .85;
+	font-size: 1rem;
+	text-align: center;
+	text-decoration: none;
+	letter-spacing: .03em;
+	cursor: pointer;
+	transition: all 200ms linear;
+	transition-property: opacity, box-shadow;
+}
+
+.button:hover,
+.button:focus {
+	opacity: .95;
+}
+
+.button:active {
+	opacity: 1;
+	box-shadow:
+		inset 0 0 .2em var(--button),
+		inset 0 .2em 1em rgba(0, 0, 0, .4);
+}
+
+.button.is-disabled {
+	opacity: .5;
+	cursor: default;
+}
+
+.button--primary {
+	--button: hsl(203, 41%, 22%);
+	--button-gradient: hsl(222, 73%, 26%);
+}
+
+.button--secondary {
+	--button: hsl(210, 67%, 48%);
+	--button-gradient: hsl(210, 80%, 25%);
+}
+
+.button--tertiary {
+	--button: hsl(0, 100%, 20%);
+	--button-gradient: hsl(5, 95%, 37%);
+}
+
+.buttons-grouped {
+	display: flex;
+}
+
+.buttons-grouped .button {
+	flex: 1;
+}
+
+.buttons-grouped .button + .button {
+	margin-left: .5em;
+}
+
+.button--with-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button--with-icon .button__icon {
+	width: 1.3em;
+	height: 1.3em;
+	margin-right: .2em;
+}
+
+.button--limited {
+	width: initial;
+}

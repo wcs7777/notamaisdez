@@ -1,0 +1,23 @@
+.editor {
+	--editor: hsl(0, 0%, 95%);
+	--editor-color: hsl(0, 0%, 12%);
+	width: 100%;
+	margin: 0;
+	padding: 1em;
+	color: var(--editor-color);
+	background-color: var(--editor);
+	border: 0;
+	border-radius: .15em;
+	box-shadow: -0.3em .3em .6em rgba(0, 0, 0, .35);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1.2rem;
+	outline: 0;
+	overflow: hidden;
+	resize: none;
+}
+
+.editor:focus,
+.editor:hover {
+	border: none;
+	outline: none;
+}

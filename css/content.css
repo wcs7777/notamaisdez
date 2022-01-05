@@ -1,0 +1,8 @@
+.content {
+	--content-padding-top: 4.9em;
+	padding: var(--content-padding-top) 3em 1em;
+}
+
+.content--login {
+	--content-padding-top: 7em;
+}

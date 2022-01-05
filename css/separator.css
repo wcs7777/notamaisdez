@@ -1,0 +1,25 @@
+.separator {
+	--separator: hsl(0, 0%, 10%);
+	display: flex;
+	align-items: center;
+	margin: .6em 0;
+	color: var(--separator);
+	font-size: 1rem;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+.separator::before,
+.separator::after {
+	content: '';
+	flex: 1;
+	border-bottom: 1px solid var(--separator);
+}
+
+.separator:not(:empty)::before {
+	margin-right: .5em;
+}
+
+.separator:not(:empty)::after {
+	margin-left: .5em;
+}
